@@ -17,5 +17,5 @@ jobs:
       - uses: actions/checkout@v2u
       
       - name: Run Conda
-        run : conda --version
+        run: conda --version
         
