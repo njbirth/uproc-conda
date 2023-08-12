@@ -1,0 +1,21 @@
+name: Conda
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  linux:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]  # [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - name: Checkout
+      - uses: actions/checkout@v2u
+      
+      - name: Run Conda
+        run : conda --version
+        
