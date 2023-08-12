@@ -15,11 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Init conda
+        uses: conda-incubator/setup-miniconda@v2
       
       - name: Prepare conda environment
         run: |
-          conda init
-          source ~/.bashrc
           conda create -n build-env conda-build anaconda-client
           conda activate build-env
 
