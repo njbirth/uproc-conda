@@ -18,6 +18,7 @@ jobs:
       
       - name: Prepare conda environment
         run: |
+          conda init
           conda create -n build-env conda-build anaconda-client
           conda activate build-env
 
