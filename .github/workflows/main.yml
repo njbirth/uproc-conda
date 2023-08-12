@@ -16,12 +16,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Run Conda
+      - name: Install build dependencies
         run: conda install conda-build anaconda-client
 
       - name: Create build dir
         run: mkdir build
 
       - name: Build package
-        run: conda build --output-directory build .
+        run: conda build --output-folder build .
         
