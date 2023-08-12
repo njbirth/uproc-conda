@@ -12,15 +12,17 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]  # [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Init conda
-        uses: s-weigand/setup-conda@v1
       
       - name: Prepare conda environment
         run: |
+          conda init
+          source ~/.bashrc
           conda create -n build-env conda-build anaconda-client
           conda activate build-env
 
