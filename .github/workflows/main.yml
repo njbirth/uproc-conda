@@ -16,8 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       
-      - name: Install build dependencies
-        run: conda install conda-build anaconda-client
+      - name: Prepare conda environment
+        run: |
+          conda create -n build-env conda-build anaconda-client
+          conda activate build-env
 
       - name: Create build dir
         run: mkdir build
