@@ -24,4 +24,6 @@ jobs:
 
       - name: Build package
         run: conda build --output-folder build .
-        
+
+      - name: Upload package
+        run: anaconda upload build/linux-64/uproc*.tar.bz2
