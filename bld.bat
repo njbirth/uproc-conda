@@ -1,2 +1,2 @@
-mkdir bin
-move uproc-prot.exe bin
+mkdir Scripts
+move uproc-prot.exe Scripts
