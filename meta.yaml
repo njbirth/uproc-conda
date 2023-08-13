@@ -17,7 +17,7 @@ requirements:
 test:
   commands:
     - uproc-prot -h      # [not win]
-    - uproc-prot.exe -h  # [win]
+    - uproc-prot -h  # [win]
 
 about:
   home: http://uproc.gobics.de
