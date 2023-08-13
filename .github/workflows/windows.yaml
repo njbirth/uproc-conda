@@ -1,0 +1,33 @@
+name: Conda Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    #defaults:
+    #  run:
+    #    shell: bash -l {0}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: conda-incubator/setup-miniconda@v2
+      
+      - name: Prepare conda environment
+        run: conda install conda-build anaconda-client
+
+      - name: Create build dir
+        run: mkdir build
+
+      - name: Build package
+        run: conda build --output-folder build .
+
+      - name: Upload package
+        env:
+          ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
+        run: anaconda upload build/linux-64/uproc*.tar.bz2
