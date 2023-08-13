@@ -1,1 +1,2 @@
-exit 0
+mkdir bin
+move uproc-prot.exe bin
