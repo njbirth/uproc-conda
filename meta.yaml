@@ -11,12 +11,13 @@ requirements:
   build:
     - make          # [not win]
     - gcc_linux-64  # [linux64]
-    - libgcc  # [osx]
+    - libgcc        # [osx]
     - zlib          # [not win]
 
 test:
   commands:
-    - uproc-prot -h
+    - uproc-prot -h      # [not win]
+    - uproc-prot.exe -h  # [win]
 
 about:
   home: http://uproc.gobics.de
