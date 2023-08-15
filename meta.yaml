@@ -14,6 +14,7 @@ requirements:
     - libgcc        # [osx]
     - make          # [not win]
     - zlib          # [not win]
+    - libgomp       # [not win]
 
 test:
   commands:
