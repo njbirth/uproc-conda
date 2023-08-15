@@ -11,8 +11,8 @@ source:
 requirements:
   build:
     #- gcc_linux-64  # [linux64]
-    - libgcc        # [osx]
-    #- {{ compiler('c') }}  # [not win]
+    #- libgcc        # [osx]
+    - {{ compiler('c') }}  # [not win]
     #- make          # [not win]
     #- zlib          # [not win]
     - llvm-openmp        # [osx]
