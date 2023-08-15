@@ -15,7 +15,7 @@ requirements:
     - {{ compiler('c') }}  # [not win]
     - make          # [not win]
     - zlib          # [not win]
-    - openmp        # [not win]
+    - llvm-openmp        # [osx]
   host:
     - zlib
     - openmp
