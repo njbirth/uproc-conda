@@ -25,7 +25,7 @@ jobs:
         run: mkdir build
 
       - name: Build package
-        run: conda build -c conda-forge -c anaconda -c bioconda --output-folder build .
+        run: conda build -c conda-forge --output-folder build .
 
       - name: Upload package
         env:
