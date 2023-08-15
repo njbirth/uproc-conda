@@ -15,6 +15,12 @@ requirements:
     - make          # [not win]
     - zlib          # [not win]
     - openmp        # [not win]
+  host:
+    - zlib
+    - openmp
+  run:
+    - zlib
+    - openmp
 
 test:
   commands:
