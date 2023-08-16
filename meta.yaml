@@ -11,20 +11,36 @@ source:
 requirements:
   build:
     - {{ compiler('c') }}  # [not win]
-    - make          # [not win]
-    - zlib          # [not win]
-    - llvm-openmp        # [osx]
-  #host:
-    #- zlib
-    #- openmp
-  #run:
-    #- zlib
-    #- openmp
+    - make                 # [not win]
+    - zlib                 # [not win]
+    - llvm-openmp          # [osx]
+  host:
+    - zlib
+    - llvm-openmp          # [osx]
+  run:
+    - zlib
+    - llvm-openmp          # [osx]
 
 test:
   commands:
-    - uproc-prot -V      # [not win]
-    - uproc-prot.exe -V  # [win]
+    - uproc-prot   -V  # [not win]
+    - uproc-prot   -v  # [not win]
+    - uproc-dna    -v  # [not win]
+    - uproc-orf    -v  # [not win]
+    - uproc-import -v  # [not win]
+    - uproc-export -v  # [not win]
+    - uproc-makedb -v  # [not win]
+    
+    - uproc-prot   -V  # [win]
+    - uproc-prot.exe   -v  # [win]
+    - uproc-dna.exe    -v  # [win]
+    - uproc-orf.exe    -v  # [win]
+    - uproc-import.exe -v  # [win]
+    - uproc-export.exe -v  # [win]
+    - uproc-makedb.exe -v  # [win]
 
 about:
   home: http://uproc.gobics.de
+  summary: UProC - tools for ultra-fast protein sequence classification
+  license: GNU GPLv3
+  license_file: COPYING
