@@ -12,7 +12,7 @@ requirements:
   build:
     - {{ compiler('c') }}  # [not win]
     - make          # [not win]
-    #- zlib          # [not win]
+    - zlib          # [not win]
     - llvm-openmp        # [osx]
   #host:
     #- zlib
