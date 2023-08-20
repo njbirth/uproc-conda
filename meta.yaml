@@ -23,6 +23,7 @@ requirements:
     - {{ compiler('c') }}  # [not win]
     - make                 # [not win]
     - automake             # [not win]
+    - libtool              # [not win]
   host:
     - m2w64-gcc-libs           # [win]
     - m2w64-zlib               # [win]
