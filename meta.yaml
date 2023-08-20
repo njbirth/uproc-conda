@@ -24,6 +24,9 @@ requirements:
     - make                 # [not win]
     - automake             # [not win]
     - libtool              # [not win]
+    - zlib                     # [not win]
+    - llvm-openmp              # [osx]
+    - libgomp                  # [linux]
   host:
     - m2w64-gcc-libs           # [win]
     - m2w64-zlib               # [win]
